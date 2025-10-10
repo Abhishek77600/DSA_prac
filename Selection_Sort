@@ -1,0 +1,12 @@
+arr = [3,22,4,42,778,354,2,3,9]
+print("Before Sorting",arr)
+n = len(arr)
+for i in range(0,n-1):
+    min = i
+    for j in range(i+1,n):
+       if arr[j]<arr[min]:
+           min = j
+    arr[i],arr[min]=arr[min],arr[i]
+
+print("Sorted Array",arr)
+            
