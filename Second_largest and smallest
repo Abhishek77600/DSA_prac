@@ -1,0 +1,29 @@
+class Solution:
+    def secondLargestElement(self, nums):
+        largest = nums[0]
+        seclargest = -1
+        for i in range(len(nums)):
+            if nums[i]>largest:
+                seclargest=largest
+                largest=nums[i]
+            elif nums[i]!=largest and nums[i]>seclargest:
+                seclargest=nums[i]
+        return seclargest
+    def secondSmallestElement(self,nums):
+        smallest = nums[0]
+        secsmallest = float('inf')
+        for i in range(len(nums)):
+
+            if len(nums)<2:
+                return [-1]
+            
+            if nums[i]<smallest:
+                secsmallest = smallest
+                smallest = nums[i]
+            elif nums[i]!=smallest and nums[i]<secsmallest:
+                secsmallest = nums[i]
+            
+        if nums[i]==float('inf'):
+            return [-1]
+        else:
+            return [smallest,secsmallest]
