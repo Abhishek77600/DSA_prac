@@ -1,0 +1,14 @@
+class Solution:
+    def unionArray(self, nums1, nums2):
+        set =[]
+        for i in range(len(nums1)):
+            set.append(nums1[i])
+        for i in range(len(nums2)):
+            set.append(nums2[i])
+        temp=[]
+        for i in range(len(set)):
+            if set[i] not in temp:
+                temp.append(set[i])
+        return temp
+
+
