@@ -1,0 +1,41 @@
+class Solution:
+    def rotate(self, nums, n):
+        k = len(nums)
+        k = k%n
+
+        def reverse(start, end):
+            while start < end:
+                nums[start], nums[end] = nums[end], nums[start]
+                start += 1
+                end -= 1
+
+        reverse(0, k - 1)
+        reverse(0, n - 1)
+        reverse(n, k - 1)
+        return nums
+
+if __name__ == "__main__":
+    nums = [1, 2, 3, 4, 5, 6, 7]
+    n = 3
+    obj = Solution()
+    print(obj.rotate(nums, n))
+
+
+
+another Method to solve:
+class Solution:
+    def rotateright(self, nums, k):
+            n = len(nums)
+            k = k%n
+            nums[:]=nums[-k:]+nums[:-k]
+            return nums
+
+if __name__ == "__main__":
+    sol = Solution()
+    arr = [1, 2, 3, 4, 5, 6, 7]
+    k = 3
+    result = sol.rotateright(arr, k)
+    print("Right rotated Array rotated array:", result)
+
+
+
