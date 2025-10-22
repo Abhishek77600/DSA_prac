@@ -1,0 +1,14 @@
+class Solution:
+    def intersection(self, n, m):
+        visited = [0] * len(m)
+        ans = []
+
+        for i in range(len(n)):
+            for j in range(len(m)):
+                if n[i] == m[j] and visited[j] == 0:
+                    ans.append(n[i])
+                    visited[j] = 1
+                    break
+                if m[j] > n[i]:  # optional optimization if m is sorted
+                    break
+        return ans
