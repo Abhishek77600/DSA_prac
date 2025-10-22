@@ -13,3 +13,9 @@ class Solution:
                 seen[s[i]]=True
                 union.append(s[i])
         return union
+
+#Union with Built in Functions
+class Solution:
+    def unionArray(self, nums1, nums2):
+       union = list(set(nums1+nums2))
+       return union
