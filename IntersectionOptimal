@@ -1,0 +1,14 @@
+class Solution:
+    def intersect(self, a, b):
+        seen = {}
+        intersection = []
+        for i in range(len(a)):
+            seen[a[i]]=True
+        for j in range(len(b)):
+            if b[j] in seen:
+                intersection.append(b[j])
+                del seen[b[j]]
+        return intersection
+
+
+       
