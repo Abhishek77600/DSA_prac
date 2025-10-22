@@ -1,0 +1,15 @@
+class Solution:
+    def unionArray(self, nums1, nums2):
+        s=[]
+        for i in range(len(nums1)):
+            s.append(nums1[i])
+        for j in range(len(nums2)):
+            s.append(nums2[j])
+
+        union =[]
+        seen={}
+        for i in range(len(s)):
+            if s[i] not in union:
+                seen[s[i]]=True
+                union.append(s[i])
+        return union
