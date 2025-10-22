@@ -11,4 +11,12 @@ class Solution:
         return intersection
 
 
+# With built in functions
+class Solution:
+    def intersect(self, a, b):
+        intersection = list(set(a) & set(b))
+        return intersection 
+
+
+
        
