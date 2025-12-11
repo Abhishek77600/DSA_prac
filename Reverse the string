@@ -1,0 +1,20 @@
+Example Input
+Input 1:
+    A = "the sky is blue"
+Input 2:
+    A = "this is ib"
+Output 1:
+    "blue is sky the"
+Output 2:
+    "ib is this"
+class Solution:
+    def solve(self, A):
+        words = A.strip().split()
+        n = len(words)
+        left,right = 0,n-1
+        while left<right:
+            words[left],words[right]=words[right],words[left]
+            left+=1
+            right-=1
+        return " ".join(words)
+            
